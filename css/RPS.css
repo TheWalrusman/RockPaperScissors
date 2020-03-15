@@ -1,0 +1,52 @@
+html body {
+  padding: 0;
+  margin: 0;
+}
+
+#titleHeader {
+  display: flex;
+  grid-area: titleHeader;
+  background-color: #92ffeb;
+  justify-content: center;
+  align-items: center;
+
+}
+#pageTitle{
+  font-size: 3vh;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#userInputBox {
+  grid-area: userInputBox;
+  background-color: green;
+}
+
+#computerInputBox {
+  grid-area: computerInputBox;
+  background-color: red;
+}
+
+#outcomeBox {
+  grid-area: outcomeBox;
+  background-color: darkslateblue;
+}
+
+#logBox {
+  grid-area: logBox;
+  background-color: lightgrey;
+  overflow: auto;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-areas: 'titleHeader titleHeader'
+  'userInputBox computerInputBox'
+  'outcomeBox outcomeBox'
+  'logBox logBox';
+  grid-template-rows: 5% 50% auto 35%;
+  grid-template-columns: 50vw 50vw;
+}

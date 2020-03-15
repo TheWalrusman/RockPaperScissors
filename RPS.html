@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="./css/RPS.css"></link>
+    <meta charset="UTF-8">
+    <title>RockPaperScissors</title>
+</head>
+<body>
+
+<div id="titleHeader">
+  <h1 id="pageTitle">Rock, Paper, Scissors Game</h1>
+</div>
+<div id="userInputBox">
+  <div >User Controlled Hand</div>
+  <div id="userchoice">Rock, Paper, Scissors</div>
+  <div id="userTextInput">
+    <form>
+    <label for="userHandChoice">Please enter your choice</label>
+    <input type="text" id="userHandChoice"
+           pattern="^(rock|paper|scissors)(\s|\t|\n|\r)*$"
+           required
+           title="please only submit rock, paper, or scissors"
+           name="handChoice" list="handShapes"
+           placeholder="rock, paper, scissors">
+    <datalist id="handShapes">
+      <option value="rock">
+      <option value="paper">
+      <option value="scissors">
+    </datalist>
+      <button>submit</button>
+    </form>
+  </div>
+
+
+</div>
+<div id="computerInputBox">
+
+</div>
+<div id="outcomeBox">
+
+</div>
+<div id="logBox">
+
+</div>
+
+
+<script src="./RPS.js"></script>
+</body>
+</html>
