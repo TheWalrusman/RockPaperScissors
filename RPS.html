@@ -15,7 +15,7 @@
   <div >User Controlled Hand</div>
   <div id="userchoice">Rock, Paper, Scissors</div>
   <div id="userTextInput">
-    <form>
+    <form onsubmit="return false;">
     <label for="userHandChoice">Please enter your choice</label>
     <input type="text" id="userHandChoice"
            pattern="^(rock|paper|scissors)(\s|\t|\n|\r)*$"
@@ -28,7 +28,7 @@
       <option value="paper">
       <option value="scissors">
     </datalist>
-      <button>submit</button>
+      <input type="submit" id="playButton" value="Submit Your Hand"></input>
     </form>
   </div>
 
