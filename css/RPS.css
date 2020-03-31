@@ -27,7 +27,11 @@ html body {
   grid-area: computerInputBox;
   background-color: red;
 }
+.computerBox{
+  align-content: center;
+  text-align: center;
 
+}
 #outcomeBox {
   grid-area: outcomeBox;
   background-color: darkslateblue;

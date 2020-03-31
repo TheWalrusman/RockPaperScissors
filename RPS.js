@@ -10,10 +10,45 @@ function computerRandomSelection() {
 
 function playRound() {
   let outcomeArray= [[0,1,2],[2,0,1],[1,2,0]];
-  let choiceConversionToInt = ["rock","paper","scissors"];
-  //let lowerCaseUserInput = playerSelection.toLowerCase();
-  //let lowerCaseComputerInput = computerSelection.toLowerCase();
-  console.log("Player: " + document.getElementById("userHandChoice").value +"  ,  " + "Computer: " + computerRandomSelection());
+  let choiceConversion = ["rock","paper","scissors"];
+  let lowerCaseUserLetterInput = document.getElementById("userHandChoice").value.toLowerCase();
+  let lowerCaseComputerLetterInput = choiceConversion[computerRandomSelection()] ;
+  let userNumericInput = choiceConversion.findIndex((element) =>element === lowerCaseUserLetterInput);
+  let computerNumericInput = choiceConversion.findIndex((element) =>element ===lowerCaseComputerLetterInput);
+
+  console.log("Player: " + userNumericInput +"  ,  " + "Computer: " + computerNumericInput);
+  document.getElementById("computerChoiceDisplay").innerText = lowerCaseComputerLetterInput;
+  let outcomeWinLoseTie = "";
+  let outcomeWinningLosingTies = "";
+  switch (outcomeArray[computerNumericInput][userNumericInput]) {
+    case 0:
+      outcomeWinLoseTie = "Tie";
+      outcomeWinningLosingTies = "Ties";
+      break;
+    case 1:
+      outcomeWinLoseTie = "Win";
+      outcomeWinningLosingTies = "Beats";
+      break;
+    case 2:
+      outcomeWinLoseTie = "Got Beat";
+      outcomeWinningLosingTies = "Gets Beaten By";
+      break;
+
+
+  }
+
+  document.getElementById("outcomeDisplay").innerText = "You " + outcomeWinLoseTie + ": " + "Your "
+    +lowerCaseUserLetterInput.toUpperCase() + " "+ outcomeWinningLosingTies + " The Opponent's "+
+    lowerCaseComputerLetterInput.toUpperCase();
+
+  let logNode = document.createElement("LI");
+  let textNode = document.createTextNode("You " + outcomeWinLoseTie + ": " + "Your "
+    +lowerCaseUserLetterInput.toUpperCase() + " "+ outcomeWinningLosingTies + " The Opponent's "+
+    lowerCaseComputerLetterInput.toUpperCase());
+  logNode.appendChild(textNode);
+  document.getElementById("outcomeLogList").appendChild(logNode);
+
+
   return 0;
 
 
@@ -28,7 +63,7 @@ function inputVerifier(){
       return playRound();
     }
 
-  return;
+
 }
 
 document.getElementById("playButton").addEventListener("click",inputVerifier);
